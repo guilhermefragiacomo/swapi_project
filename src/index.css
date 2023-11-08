@@ -1,0 +1,33 @@
+ @font-face {
+   font-family: starjedi;
+   src: url("assets/star_jedi/starjedi/Starjedi.ttf");
+ }
+
+ :root {
+   --primaria: white;
+   --yellow: #ffdf2b;
+ }
+
+ @font-face {
+   font-family: starjhol;
+   src: url("assets/star_jedi/starjedi/Starjhol.ttf");
+ }
+
+ * {
+   margin: 0;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   padding: 0;
+   box-sizing: border-box;
+   color: white;
+   font-family: Arial, Helvetica, sans-serif;
+ }
+
+ code {
+   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+     monospace;
+ }
+
+ main {
+   background-image: radial-gradient(#313131, #181818);
+ }

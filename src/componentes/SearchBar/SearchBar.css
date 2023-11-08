@@ -1,0 +1,32 @@
+input {
+    margin: auto;
+    background: none;
+    border: none;
+    width: 100%;
+    padding-right: 5px;
+}
+
+input:focus {
+    outline: none;
+}
+
+div#search {
+    margin-top: 40px;
+    display: flex;
+}
+
+div#search div {
+    margin: auto;
+    display: flex;
+    outline: 2px solid white;
+    border-radius: 20px;
+    padding: 5px 8px;
+    width: 40%;
+}
+
+img#searchicon {
+    width: 25px;
+    margin: auto;
+    margin-right: 10px;
+    cursor: pointer;
+}

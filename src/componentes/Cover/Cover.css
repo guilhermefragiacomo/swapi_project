@@ -1,0 +1,16 @@
+figure {
+    width: 225px;
+    margin-bottom: 20px;
+}
+
+figure img {
+    width: 225px;
+    height: 360px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+figure h2 {
+    margin: 7px auto auto 7px;
+    font-size: 13pt;
+}
