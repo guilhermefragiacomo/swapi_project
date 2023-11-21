@@ -1,4 +1,4 @@
-div#filmes {
+section#filmes {
     padding: 70px 0px;
     display: flex;
     flex-wrap: wrap;
