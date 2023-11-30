@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import "./header.css";
-import user from "assets/icones/icons8-user-48.png";
+import user from "../../assets/icones/icons8-user-48.png";
 export default function Header({ children }) {
     return (
         <Link to="/">

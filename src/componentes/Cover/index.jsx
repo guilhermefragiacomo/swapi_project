@@ -1,7 +1,6 @@
 import "./Cover.css"
 
 export default function Cover({ cover, desc }) {
-    console.log(cover);
     return (
         <figure>
             <img src={cover} />

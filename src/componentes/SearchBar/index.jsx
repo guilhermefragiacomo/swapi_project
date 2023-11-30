@@ -1,5 +1,5 @@
 import "./SearchBar.css"
-import search from "assets/icones/search-icon.png";
+import search from "../../assets/icones/search-icon.png";
 
 export default function SearchBar() {
     return (
