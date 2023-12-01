@@ -22,7 +22,8 @@
 }
 
 .modal {
-    width: 50%;
+    min-width: 200px;
+    width: 30%;
     background-color: #363636;
     display: none;
     position: absolute;
@@ -33,7 +34,7 @@
 
 .imagemModal {
     margin: 15px;
-    width: 90%;
+    width: 80%;
     min-height: 150px;
     background-color: white;
     border-radius: 15px;
