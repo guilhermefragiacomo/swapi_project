@@ -83,6 +83,10 @@ export default function SearchBar({ personagens, veiculos, planetas, naves, obje
                 <img id="searchicon" src={search} alt="" onClick={() => {
                     let arrayTemp2 = [...personagens, ...veiculos, ...naves, ...planetas];
                     setGeral(arrayTemp2);
+
+                    currentUrl = String(window.location.href).slice(45);
+
+                    console.log(currentUrl);
                     
                     let barra = document.getElementById('barra');
                     pesquisar(barra.value);
