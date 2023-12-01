@@ -25,8 +25,8 @@ export default function Item({ pers, veiculos, naves, planetas }) {
                         film.charAt(film.length - 2) + ", "
                     )}</h2>
                     <p>ID: {pers.url}</p>
-                    <p>{`Tripulação ${pers.crew}`}</p>
-                    <p>{`Capacidade ${pers.cargo_capacity}`}</p>
+                    <p>{pers.crew == "undefined" ? "" : `Tripulação ${pers.crew}`}</p>
+                    <p>{pers.cargo_capacity == "undefined" ? "" : `Capacidade ${pers.cargo_capacity}`}</p>
                     <p>{`${pers.height}`}</p>
                     <p>{`${pers.mass}`}</p>
                     <p>{`${pers.hair_color}`}</p>
