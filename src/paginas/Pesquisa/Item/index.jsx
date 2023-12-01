@@ -25,30 +25,30 @@ export default function Item({ pers, veiculos, naves, planetas }) {
                         film.charAt(film.length - 2) + ", "
                     )}</h2>
                     <p>ID: {pers.url}</p>
-                    <p>{pers.crew == undefined ? "" : `Tripulação ${pers.crew}`}</p>
-                    <p>{pers.cargo_capacity == undefined ? "" : `Capacidade ${pers.cargo_capacity}`}</p>
-                    <p>{pers.height == undefined ? "" : `${pers.height}`}</p>
-                    <p>{pers.mass == undefined ? "" : `${pers.mass}`}</p>
-                    <p>{pers.hair_color == undefined ? "" : `${pers.hair_color}`}</p>
-                    <p>{pers.skin_color == undefined ? "" : `${pers.skin_color}`}</p>
-                    <p>{pers.birth_year == undefined ? "" : `${pers.birth_year}`}</p>
-                    <p>{pers.gender == undefined ? "" : `${pers.gender}`}</p>
-                    <p>{pers.model == undefined ? "" : `${pers.model}`}</p>
-                    <p>{pers.manufacturer == undefined ? "" : `${pers.manufacturer}`}</p>
-                    <p>{pers.cost_in_credits == undefined ? "" : `${pers.cost_in_credits}`}</p>
-                    <p>{pers.length == undefined ? "" : `${pers.length}`}</p>
-                    <p>{pers.max_atmosphering_speed == undefined ? "" : `${pers.max_atmosphering_speed}`}</p>
-                    <p>{pers.passengers == undefined ? "" : `${pers.passengers}`}</p>
-                    <p>{pers.consumables == undefined ? "" : `${pers.consumables}`}</p>
-                    <p>{pers.starship_class == undefined ? "" : `${pers.starship_class}`}</p>
-                    <p>{pers.rotation_period == undefined ? "" : `${pers.rotation_period}`}</p>
-                    <p>{pers.orbital_period == undefined ? "" : `${pers.orbital_period}`}</p>
-                    <p>{pers.diameter == undefined ? "" : `${pers.diameter}`}</p>
-                    <p>{pers.climate == undefined ? "" : `${pers.climate}`}</p>
-                    <p>{pers.gravity == undefined ? "" : `${pers.gravity}`}</p>
-                    <p>{pers.terrain == undefined ? "" : `${pers.terrain}`}</p>
-                    <p>{pers.surface_water == undefined ? "" : `${pers.surface_water}`}</p>
-                    <p>{pers.population == undefined ? "" : `${pers.population}`}</p>
+                    <p>{pers.crew == undefined ? "" : `Tripulação: ${pers.crew}`}</p>
+                    <p>{pers.cargo_capacity == undefined ? "" : `Capacidade: ${pers.cargo_capacity}`}</p>
+                    <p>{pers.height == undefined ? "" : `Peso: ${pers.height}`}</p>
+                    <p>{pers.mass == undefined ? "" : `Massa: ${pers.mass}`}</p>
+                    <p>{pers.hair_color == undefined ? "" : `Cor de Cabelo: ${pers.hair_color}`}</p>
+                    <p>{pers.skin_color == undefined ? "" : `Cor de Pele: ${pers.skin_color}`}</p>
+                    <p>{pers.birth_year == undefined ? "" : `Ano de Nascimento: ${pers.birth_year}`}</p>
+                    <p>{pers.gender == undefined ? "" : `Gênero: ${pers.gender}`}</p>
+                    <p>{pers.model == undefined ? "" : `Modelo: ${pers.model}`}</p>
+                    <p>{pers.manufacturer == undefined ? "" : `Fabricador: ${pers.manufacturer}`}</p>
+                    <p>{pers.cost_in_credits == undefined ? "" : `Custo: ${pers.cost_in_credits}`}</p>
+                    <p>{pers.length == undefined ? "" : `Comprimento: ${pers.length}`}</p>
+                    <p>{pers.max_atmosphering_speed == undefined ? "" : `Velocidade Máxima da Atmosfera: ${pers.max_atmosphering_speed}`}</p>
+                    <p>{pers.passengers == undefined ? "" : `Passageiros: ${pers.passengers}`}</p>
+                    <p>{pers.consumables == undefined ? "" : `Consumíveis: ${pers.consumables}`}</p>
+                    <p>{pers.starship_class == undefined ? "" : `Classe de Nave: ${pers.starship_class}`}</p>
+                    <p>{pers.rotation_period == undefined ? "" : `Periodo de Rotação: ${pers.rotation_period}`}</p>
+                    <p>{pers.orbital_period == undefined ? "" : `Periodo de Orbita: ${pers.orbital_period}`}</p>
+                    <p>{pers.diameter == undefined ? "" : `Diâmetro: ${pers.diameter}`}</p>
+                    <p>{pers.climate == undefined ? "" : `Clima: ${pers.climate}`}</p>
+                    <p>{pers.gravity == undefined ? "" : `Gravidade: ${pers.gravity}`}</p>
+                    <p>{pers.terrain == undefined ? "" : `Terreno: ${pers.terrain}`}</p>
+                    <p>{pers.surface_water == undefined ? "" : `Água Superficial${pers.surface_water}`}</p>
+                    <p>{pers.population == undefined ? "" : `População: ${pers.population}`}</p>
                 </div>
             </div>
         </>
