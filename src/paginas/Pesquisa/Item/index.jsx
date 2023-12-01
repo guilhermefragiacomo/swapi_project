@@ -2,11 +2,11 @@ import styles from './index.module.css'
 import heart from '../../../assets/icones/white_heart.png';
 
 export default function Item({ pers, veiculos, naves, planetas }) {
-    srcImage = srcImage == undefined ? "" : "/imagens/carro.webp"
-    srcImage = pers.mass == undefined ? "" : "/imagens/luke.jpg"
-    srcImage = pers.population == undefined ? "" : "/imagens/planet.jpeg"
-    srcImage = pers.starship_class == undefined ? "" : "/imagens/starship.webp"
-    
+    srcImage = srcImage == undefined ? "" : "imagens/carro.webp"
+    srcImage = pers.mass == undefined ? "" : "imagens/luke.jpg"
+    srcImage = pers.population == undefined ? "" : "imagens/planet.jpeg"
+    srcImage = pers.starship_class == undefined ? "" : "imagens/starship.webp"
+
     return (
         <>
             <div className={styles.div} onClick={() => {
