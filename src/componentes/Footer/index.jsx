@@ -3,7 +3,7 @@ import "./Footer.css"
 export default function Footer() {
     return (
         <footer>
-            <p>&copy; Copyright</p>
+            <p>&copy; Guilherme - Bruna</p>
         </footer>
     )
 }
