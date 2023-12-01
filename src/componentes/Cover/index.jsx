@@ -4,7 +4,7 @@ export default function Cover({ cover, details, id }) {
     return (
         <>
             <figure onClick={() => {
-                document.getElementById(id).style.display='flex';
+                document.getElementById(id).style.display='block';
             }}>
                 <img src={cover} />
                 <figcaption><h2>Ep {details.episode_id} - {details.title}</h2></figcaption>
