@@ -23,6 +23,7 @@ figure h2 {
     background-color: #363636;
     border-radius: 20px;
     display: none;
+    flex-wrap: wrap;
 }
 .modal img {
     display: flex;
