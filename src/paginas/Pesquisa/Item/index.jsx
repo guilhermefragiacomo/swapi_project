@@ -7,6 +7,8 @@ export default function Item({ pers, veiculos, naves, planetas }) {
     srcImage = pers.population == undefined ? "" : "imagens/planet.jpeg"
     srcImage = pers.starship_class == undefined ? "" : "imagens/starship.webp"
 
+    console.log(srcImage);
+
     return (
         <>
             <div className={styles.div} onClick={() => {
