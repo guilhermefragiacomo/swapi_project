@@ -6,6 +6,7 @@ export default function Item({ pers, veiculos, naves, planetas }) {
         <>
             <div className={styles.div} onClick={() => {
                 document.getElementById(`personagem_${pers.url}`).style.display='block';
+                console.log("clicou");
                 //document.getElementById("opac").style.opacity='0.5';
             }}>
                 <div className={styles.desc}>
