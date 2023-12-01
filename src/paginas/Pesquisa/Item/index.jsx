@@ -25,7 +25,7 @@ export default function Item({ pers, veiculos, naves, planetas }) {
                         film.charAt(film.length - 2) + ", "
                     )}</h2>
                     <p>ID: {pers.url}</p>
-                    <p></p>
+                    <p>{pers.crew}</p>
                 </div>
             </div>
         </>
