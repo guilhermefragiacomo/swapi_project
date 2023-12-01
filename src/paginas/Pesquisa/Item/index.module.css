@@ -28,12 +28,12 @@
     display: none;
     position: absolute;
     top: 120px;
-    margin: auto;
+    margin-left: 35%;
     border-radius: 20px;
 }
 
 .imagemModal {
-    margin: 15px;
+    margin: 15px auto 10px auto;
     width: 80%;
     min-height: 150px;
     background-color: white;
