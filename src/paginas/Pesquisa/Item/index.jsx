@@ -2,6 +2,11 @@ import styles from './index.module.css'
 import heart from '../../../assets/icones/white_heart.png';
 
 export default function Item({ pers, veiculos, naves, planetas }) {
+    srcImage = srcImage == undefined ? "" : "/imagens/carro.webp"
+    srcImage = pers.mass == undefined ? "" : "/imagens/luke.jpg"
+    srcImage = pers.population == undefined ? "" : "/imagens/planet.jpeg"
+    srcImage = pers.starship_class == undefined ? "" : "/imagens/starship.webp"
+    
     return (
         <>
             <div className={styles.div} onClick={() => {
@@ -14,7 +19,7 @@ export default function Item({ pers, veiculos, naves, planetas }) {
                     <p>Filmes: {pers.films.map(film =>
                         film.charAt(film.length - 2) + ", "
                     )}</p>
-                    <img className={styles.imagem}/>
+                    <img src={srcImage} className={styles.imagem}/>
                 </div>
             </div>
             <div id={`personagem_${pers.url}`} className={styles.modal}>
@@ -23,7 +28,7 @@ export default function Item({ pers, veiculos, naves, planetas }) {
                     document.getElementById("opac").style.opacity='0';
                 }}>&times;</span>
 
-                <img className={styles.imagemModal}/>
+                <img src={srcImage} className={styles.imagemModal}/>
 
                 <div className={styles.desc}>
                     <h1>{pers.name}</h1>
