@@ -149,7 +149,7 @@ function Router() {
           <Header><h1>star wars</h1></Header>
 
           <Nav />
-          <SearchBar personagens={personagens} veiculos={veiculos} planetas={planetas} naves={naves} objetosPagina={objetosPagina} setObjetosPagina={setObjetosPagina} setGeral={setGeral} geral={geral}/>
+          <SearchBar personagens={personagens} veiculos={veiculos} planetas={planetas} naves={naves} objetosPagina={objetosPagina} setObjetosPagina={setObjetosPagina} setGeral={setGeral} geral={geral} species={species}/>
           
           <main>
 
