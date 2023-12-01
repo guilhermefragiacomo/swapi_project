@@ -15,7 +15,7 @@ export default function Item({ pers, veiculos, naves, planetas }) {
                     <p>Filmes: {pers.films.map(film =>
                         film.charAt(film.length - 2) + ", "
                     )}</p>
-                    <img src={srcImage} className={styles.imagem}/>
+                    <img className={styles.imagem}/>
                 </div>
             </div>
             <div id={`personagem_${pers.url}`} className={styles.modal}>
@@ -24,7 +24,7 @@ export default function Item({ pers, veiculos, naves, planetas }) {
                     document.getElementById("opac").style.opacity='0';
                 }}>&times;</span>
 
-                <img src={srcImage} className={styles.imagemModal}/>
+                <img className={styles.imagemModal}/>
 
                 <div className={styles.desc}>
                     <h1>{pers.name}</h1>
