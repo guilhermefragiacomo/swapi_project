@@ -2,7 +2,7 @@ import "./SearchBar.css"
 import search from "../../assets/icones/search-icon.png";
 import { useNavigate } from "react-router-dom";
 
-export default function SearchBar({ personagens, veiculos, planetas, naves, objetosPagina, setObjetosPagina, setGeral, geral }) {
+export default function SearchBar({ personagens, veiculos, planetas, naves, species, objetosPagina, setObjetosPagina, setGeral, geral }) {
     const navigate = useNavigate();
     let currentUrl;
 
@@ -24,7 +24,7 @@ export default function SearchBar({ personagens, veiculos, planetas, naves, obje
 
         console.log(currentUrl);
         
-        if (currentUrl == "" || currentUrl == "geral") {
+        if (currentUrl == "" || currentUrl == "pesquisa/geral") {
             arrayTemp2.forEach(element => {
                 element.page.forEach(el => {
                     if (String(el.name).toLowerCase().includes(string)) {
@@ -33,7 +33,7 @@ export default function SearchBar({ personagens, veiculos, planetas, naves, obje
                 })
             });
         } else {
-            if (currentUrl == "personagens") {
+            if (currentUrl == "pesquisa/personagens") {
                 personagens.forEach(element => {
                     element.page.forEach(el => {
                         if (String(el.name).toLowerCase().includes(string)) {
@@ -42,7 +42,7 @@ export default function SearchBar({ personagens, veiculos, planetas, naves, obje
                     })
                 });
             } else {
-                if (currentUrl == "veiculos") {
+                if (currentUrl == "pesquisa/veiculos") {
                     veiculos.forEach(element => {
                         element.page.forEach(el => {
                             if (String(el.name).toLowerCase().includes(string)) {
@@ -51,7 +51,7 @@ export default function SearchBar({ personagens, veiculos, planetas, naves, obje
                         })
                     });
                 } else {
-                    if (currentUrl == "planetas") {
+                    if (currentUrl == "pesquisa/planetas") {
                         planetas.forEach(element => {
                             element.page.forEach(el => {
                                 if (String(el.name).toLowerCase().includes(string)) {
@@ -60,13 +60,23 @@ export default function SearchBar({ personagens, veiculos, planetas, naves, obje
                             })
                         });
                     } else {
-                        naves.forEach(element => {
-                            element.page.forEach(el => {
-                                if (String(el.name).toLowerCase().includes(string)) {
-                                    arrayTemp.push(el);
-                                }
-                            })
-                        });
+                        if (currentUrl == "pesquisa/naves") {
+                            naves.forEach(element => {
+                                element.page.forEach(el => {
+                                    if (String(el.name).toLowerCase().includes(string)) {
+                                        arrayTemp.push(el);
+                                    }
+                                })
+                            });
+                        } else {
+                            species.forEach(element => {
+                                element.page.forEach(el => {
+                                    if (String(el.name).toLowerCase().includes(string)) {
+                                        arrayTemp.push(el);
+                                    }
+                                })
+                            });
+                        }
                     }
                 }
             } 
@@ -83,11 +93,6 @@ export default function SearchBar({ personagens, veiculos, planetas, naves, obje
                 <img id="searchicon" src={search} alt="" onClick={() => {
                     let arrayTemp2 = [...personagens, ...veiculos, ...naves, ...planetas];
                     setGeral(arrayTemp2);
-
-                    currentUrl = String(window.location.href).slice(45);
-                    
-                    console.log(window.location.href);
-                    console.log(currentUrl);
                     
                     let barra = document.getElementById('barra');
                     pesquisar(barra.value);
