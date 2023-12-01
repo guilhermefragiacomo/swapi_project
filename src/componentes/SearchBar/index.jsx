@@ -21,6 +21,8 @@ export default function SearchBar({ personagens, veiculos, planetas, naves, obje
         setGeral(arrayTemp2);
 
         currentUrl = String(window.location.href).slice(45);
+
+        console.log(currentUrl);
         
         if (currentUrl == "" || currentUrl == "geral") {
             arrayTemp2.forEach(element => {
