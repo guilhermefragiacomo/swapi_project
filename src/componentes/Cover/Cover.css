@@ -26,6 +26,7 @@ figure h2 {
     flex-wrap: wrap;
 }
 .modal img {
+    width: 40%;
     display: flex;
     border-radius: 20px;
     margin: 10px;
