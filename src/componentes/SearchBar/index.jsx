@@ -91,7 +91,7 @@ export default function SearchBar({ personagens, veiculos, planetas, naves, spec
         <div id="search">
             <div>
                 <img id="searchicon" src={search} alt="" onClick={() => {
-                    let arrayTemp2 = [...personagens, ...veiculos, ...naves, ...planetas];
+                    let arrayTemp2 = [...personagens, ...veiculos, ...naves, ...planetas, ...species];
                     setGeral(arrayTemp2);
                     
                     let barra = document.getElementById('barra');
