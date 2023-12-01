@@ -19,7 +19,7 @@ export default function Item({ pers, veiculos, naves, planetas }) {
                 <span className={styles.span} onClick={() => {
                     document.getElementById(`personagem_${pers.url}`).style.display='none';
                 }}>&times;</span>
-                <div>
+                <div className={desc}>
                     <h1>{pers.name}</h1>
                     <h2>Filmes: {pers.films.map(film =>
                         film.charAt(film.length - 2) + ", "
@@ -47,7 +47,7 @@ export default function Item({ pers, veiculos, naves, planetas }) {
                     <p>{pers.climate == undefined ? "" : `Clima: ${pers.climate}`}</p>
                     <p>{pers.gravity == undefined ? "" : `Gravidade: ${pers.gravity}`}</p>
                     <p>{pers.terrain == undefined ? "" : `Terreno: ${pers.terrain}`}</p>
-                    <p>{pers.surface_water == undefined ? "" : `Água Superficial${pers.surface_water}`}</p>
+                    <p>{pers.surface_water == undefined ? "" : `Água Superficial: ${pers.surface_water}`}</p>
                     <p>{pers.population == undefined ? "" : `População: ${pers.population}`}</p>
                 </div>
             </div>
