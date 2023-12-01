@@ -20,7 +20,7 @@ export default function Item({ pers, veiculos, naves, planetas }) {
                     document.getElementById(`personagem_${pers.url}`).style.display='none';
                 }}>&times;</span>
 
-                <img className={styles.imagemModal}/>
+                <div className={styles.imagemModal}></div>
 
                 <div className={styles.desc}>
                     <h1>{pers.name}</h1>

@@ -33,6 +33,8 @@
 .imagemModal {
     background-color: white;
     margin: 20px;
+    width: 100%;
+    height: 50%;
 }
 
 .span {
