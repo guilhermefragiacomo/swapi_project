@@ -119,7 +119,6 @@ function Router() {
     try {
       if (JSON.parse(localStorage.getItem("films"))[0].characters.length > 1) {
         setFilmes(JSON.parse(localStorage.getItem("films")));
-        console.log("a");
       }
       if (JSON.parse(localStorage.getItem("people"))[0].page.length != 0) {
         setPersonagens(JSON.parse(localStorage.getItem("people")));
@@ -134,7 +133,7 @@ function Router() {
         setNaves(JSON.parse(localStorage.getItem("starships")));
       }
       if (JSON.parse(localStorage.getItem("species"))[0].page.length != 0) {
-        setNaves(JSON.parse(localStorage.getItem("species")));
+        setSpecies(JSON.parse(localStorage.getItem("species")));
       }
     } catch (error) {
       console.log("Os dados ainda não estão guardados no localstorage");

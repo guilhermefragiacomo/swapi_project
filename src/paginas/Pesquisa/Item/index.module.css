@@ -23,13 +23,16 @@
 
 .modal {
     width: 50%;
-    height: 40%;
     background-color: #363636;
     display: none;
     position: absolute;
     top: 120px;
     margin-left: 25%;
     border-radius: 20px;
+}
+.imagemModal {
+    background-color: white;
+    margin: 20px;
 }
 
 .span {

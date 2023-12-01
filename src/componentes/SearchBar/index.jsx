@@ -32,7 +32,6 @@ export default function SearchBar({ personagens, veiculos, planetas, naves, obje
             });
         } else {
             if (currentUrl == "personagens") {
-                console.log("dwaop");
                 personagens.forEach(element => {
                     element.page.forEach(el => {
                         if (String(el.name).toLowerCase().includes(string)) {
