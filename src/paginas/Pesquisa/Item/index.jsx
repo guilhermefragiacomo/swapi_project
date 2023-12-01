@@ -41,6 +41,14 @@ export default function Item({ pers, veiculos, naves, planetas }) {
                     <p>{pers.passengers == undefined ? "" : `${pers.passengers}`}</p>
                     <p>{pers.consumables == undefined ? "" : `${pers.consumables}`}</p>
                     <p>{pers.starship_class == undefined ? "" : `${pers.starship_class}`}</p>
+                    <p>{pers.rotation_period == undefined ? "" : `${pers.rotation_period}`}</p>
+                    <p>{pers.orbital_period == undefined ? "" : `${pers.orbital_period}`}</p>
+                    <p>{pers.diameter == undefined ? "" : `${pers.diameter}`}</p>
+                    <p>{pers.climate == undefined ? "" : `${pers.climate}`}</p>
+                    <p>{pers.gravity == undefined ? "" : `${pers.gravity}`}</p>
+                    <p>{pers.terrain == undefined ? "" : `${pers.terrain}`}</p>
+                    <p>{pers.surface_water == undefined ? "" : `${pers.surface_water}`}</p>
+                    <p>{pers.population == undefined ? "" : `${pers.population}`}</p>
                 </div>
             </div>
         </>
