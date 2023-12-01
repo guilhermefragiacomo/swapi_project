@@ -6,6 +6,7 @@ export default function Item({ pers, veiculos, naves, planetas }) {
         <>
             <div className={styles.div} onClick={() => {
                 document.getElementById(`personagem_${pers.url}`).style.display='block';
+                document.getElementById("opac").style.opacity='0.5';
             }}>
                 <div className={styles.desc}>
                     <h3 className={styles.nome}>{pers.name}</h3>
@@ -18,6 +19,7 @@ export default function Item({ pers, veiculos, naves, planetas }) {
             <div id={`personagem_${pers.url}`} className={styles.modal}>
                 <span className={styles.span} onClick={() => {
                     document.getElementById(`personagem_${pers.url}`).style.display='none';
+                    document.getElementById("opac").style.opacity='0';
                 }}>&times;</span>
 
                 <img className={styles.imagemModal}/>
@@ -54,6 +56,7 @@ export default function Item({ pers, veiculos, naves, planetas }) {
                     <p>{pers.population == undefined ? "" : `População: ${pers.population}`}</p>
                 </div>
             </div>
+            <div id="opac" className={styles.opacity} ></div>
         </>
     );
 }
