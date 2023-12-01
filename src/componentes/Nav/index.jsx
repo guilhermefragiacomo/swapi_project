@@ -6,18 +6,23 @@ export default function Nav() {
         <nav>
             <ul>
                 <li>
-                    <Link to="pesquisa?var=personagens">
+                    <Link to="pesquisa/personagens">
                         <a>Personagens</a>
                     </Link>
                 </li>
                 <li>
-                    <Link to="pesquisa?var=veiculos">
+                    <Link to="pesquisa/veiculos">
                         <a>Veículos</a>
                     </Link>
                 </li>
                 <li>
-                    <Link to="pesquisa?var=planetas">
+                    <Link to="pesquisa/planetas">
                         <a>Planetas</a>
+                    </Link>
+                </li>
+                <li>
+                    <Link to="pesquisa/naves">
+                        <a>Naves</a>
                     </Link>
                 </li>
             </ul>

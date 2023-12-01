@@ -5,10 +5,13 @@ export default function Filmes(filmes) {
     filmes = filmes.filmes
 
     return (
-        <section id="filmes">
-            {filmes.map(filme =>
-                <Cover key={filme.ep} cover={filme.src} desc={`Ep ${filme.ep} - ${filme.nome}`} />
-            )}
-        </section>
+        <>
+            <img id="imageDarth" src="/imagens/star-wars-1680799242.jpg"/>
+            <section id="filmes">
+                {filmes.map(filme =>
+                    <Cover key={filme.episode_id} id={filme.episode_id}cover={filme.url} details={filme}/>
+                )}
+            </section>
+        </>
     )
 }

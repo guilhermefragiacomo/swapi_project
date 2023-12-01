@@ -1,21 +1,21 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import Item from "./Item";
 import styles from "./Pesquisa.module.css";
 import axios from 'axios';
 
-export default function Pesquisa({ personagens, setPersonagens, personagensPagina, setPersonagensPagina}) {
-    async function getPosts(page) {
-        if (personagens[page-1].page.length == 0) {
+let counts, maxPage;
+
+export default function Pesquisa({ lista, setLista, listaPagina, setListaPagina, tipo, personagens, veiculos, planetas, naves }) {
+    async function getPosts(page, mudarPagina) {
+        //caso o tamanho da lista da página for 0, não tem informações, a api é chamada
+        if (lista[page - 1].page.length == 0) {
             try {
-                const response = await axios.get(`https://swapi.dev/api/people/?page=${page}`);
+                const response = await axios.get(`https://swapi.dev/api/${tipo}/?page=${page}`);
                 const data = response.data.results;
-                const maxPage = response.data.count;
+                counts = response.data.count;
+                maxPage = counts % 10 == 0 ? counts / 10 : counts / 10 + 1;
 
-                let arraytemp = [];
-                arraytemp = personagens;
-                arraytemp[page-1].page = data;
-                setPersonagens(arraytemp);
-
+                //altera a url de cada personagem para um id
                 data.forEach(person => {
                     let id_people = person.url.charAt(person.url.length - 3) + person.url.charAt(person.url.length - 2);
                     if (id_people.charAt(0) == '/') {
@@ -24,48 +24,103 @@ export default function Pesquisa({ personagens, setPersonagens, personagensPagin
                     person.url = id_people;
                 });
 
-                getPagina(data, page);
+
+                //altera a lista para uma lista com todas as informações da lista antiga, mais as informações recém obtidas da api
+                let arraytemp = [];
+                arraytemp = lista;
+                arraytemp[page - 1].page = data;
+                setLista(arraytemp);
+
+                if (mudarPagina) {
+                    getPagina(data, page);
+                }
+
+                if (tipo == "people") {
+                    localStorage.setItem("people", JSON.stringify(lista));
+                } else {
+                    if (tipo == "vehicles") {
+                        localStorage.setItem("vehicles", JSON.stringify(lista));
+                    } else {
+                        if (tipo == "planets") {
+                            localStorage.setItem("planets", JSON.stringify(lista));
+                        } else {
+                            localStorage.setItem("starships", JSON.stringify(lista));
+                        }
+                    }
+                }
 
             } catch (error) {
                 console.log(error);
             }
         } else {
-            getPagina(personagens[page-1].page, page);
+            if (mudarPagina) {
+                //caso as informações da página {page} já estejam carregadas, a página é carregada sem a chamada da api
+                getPagina(lista[page - 1].page, page);
+            }
         }
     };
 
     const getPagina = (allPosts, page) => {
         let arrayTemp = [];
-        for (let i = 0; i < (page != 9 ? 10 : 2); i++) {
-            arrayTemp = [...arrayTemp, allPosts[i]];
+        console.log(allPosts);
+        if (tipo == "geral") {
+            //coloca as informações obtidas da api na lista de objetos pagina
+            for (let i = 0; i < allPosts.lenght; i++) {
+                arrayTemp = [...arrayTemp, allPosts[i].page];
+            }
+        } else {
+            //coloca as informações obtidas da api na lista de objetos pagina
+            for (let i = 0; i < allPosts.length; i++) {
+                arrayTemp = [...arrayTemp, allPosts[i]];
+            }
         }
-        setPersonagensPagina(arrayTemp);
+        setListaPagina(arrayTemp);
     }
 
     useEffect(() => {
-        if (personagens[0].page.length == 0) {
-            getPosts(1);
+        if (tipo == "geral") {
+            //console.log(lista);
+            //getPagina(lista, 1);
+        } else {
+            try {
+                maxPage = JSON.parse(localStorage.getItem(tipo)).length;
+            } catch (error) {
+                console.log("Os dados ainda não estão guardados no localstorage");
+            }
+            //chama a api e mostra as informações na tela, caso a array já possua as informações, não mostra na tela
+            if (lista[0].page.length == 0) {
+                getPosts(1, 1);
+                for (let i = 2; i < lista.length + 1; i++) {
+                    getPosts(i, 0);
+                }
+            } else {
+                getPagina(lista[0].page, 1);
+            }
         }
-    }, []);
+        
+    }, [tipo]);
 
     return (
-        <section className={styles.section}>
+        <>
+            <section className={styles.section}>
 
-            {personagensPagina.map(personagem =>
-                <Item key={personagem.name} pers={personagem} />
-            )}
-
+                {listaPagina.map(personagem =>
+                    <Item key={personagem.name} pers={personagem} personagens={personagens} veiculos={veiculos} planetas={planetas} naves={naves}/>
+                    //chama o card de cada objeto dentro da lista de objetos pagina
+                )}
+            </section>
             <nav className={styles.nav2}>
-                <a className={styles.a2} onClick={() => getPosts(1)}>1</a>
-                <a className={styles.a2} onClick={() => getPosts(2)}>2</a>
-                <a className={styles.a2} onClick={() => getPosts(3)}>3</a>
-                <a className={styles.a2} onClick={() => getPosts(4)}>4</a>
-                <a className={styles.a2} onClick={() => getPosts(5)}>5</a>
-                <a className={styles.a2} onClick={() => getPosts(6)}>6</a>
-                <a className={styles.a2} onClick={() => getPosts(7)}>7</a>
-                <a className={styles.a2} onClick={() => getPosts(8)}>8</a>
-                <a className={styles.a2} onClick={() => getPosts(9)}>9</a>
+                {(() => {
+                    let navs = [];
+
+                    //mostra cada numero da pagina, com a funcao que chama as informações da página
+                    for (let i = 1; i < parseInt(maxPage) + 1; i++) {
+                        navs.push(<a key={i} className={styles.a2} onClick={() => getPosts(i, 1)}>{i}</a>)
+                    }
+
+                    return navs;
+                })()}
             </nav>
-        </section>
+        </>
     );
 }

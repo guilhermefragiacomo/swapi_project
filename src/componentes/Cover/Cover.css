@@ -1,6 +1,7 @@
 figure {
     width: 225px;
     margin-bottom: 20px;
+    cursor: pointer;
 }
 
 figure img {
@@ -13,4 +14,50 @@ figure img {
 figure h2 {
     margin: 7px auto auto 7px;
     font-size: 13pt;
+}
+
+.modal {
+    top: 100px;
+    width: 60%;
+    position: absolute;
+    background-color: #363636;
+    border-radius: 20px;
+    display: none;
+}
+.modal img {
+    min-width: 250px;
+    width: 40%;
+    border-radius: 20px;
+    margin: 10px;
+}
+.modal span {
+    position: absolute;
+    font-size: 20pt;
+    padding-top: 2px;
+    right: -30px;
+    top: -30px;
+    background-color: rgb(185, 11, 11);
+    width: 35px;
+    text-align: center;
+    margin: auto;
+    height: 35px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.modal h2 {
+    font-weight: normal;
+}
+
+
+.modal #desc {
+    margin: 15px 10px;
+}
+.modal #desc h1 {
+    margin-bottom:10px;
+}
+.modal #desc h2{
+    margin-bottom: 25px;
+}
+.modal #desc p {
+    margin-bottom: 25px;
 }
