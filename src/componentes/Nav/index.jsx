@@ -25,6 +25,11 @@ export default function Nav() {
                         <a>Naves</a>
                     </Link>
                 </li>
+                <li>
+                    <Link to="pesquisa/species">
+                        <a>Espécies</a>
+                    </Link>
+                </li>
             </ul>
         </nav>
     )

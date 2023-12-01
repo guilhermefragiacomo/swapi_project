@@ -5,7 +5,7 @@ import axios from 'axios';
 
 let counts, maxPage;
 
-export default function Pesquisa({ lista, setLista, listaPagina, setListaPagina, tipo, personagens, veiculos, planetas, naves }) {
+export default function Pesquisa({ lista, setLista, listaPagina, setListaPagina, tipo, personagens, veiculos, planetas, naves, species }) {
     async function getPosts(page, mudarPagina) {
         //caso o tamanho da lista da página for 0, não tem informações, a api é chamada
         if (lista[page - 1].page.length == 0) {
@@ -44,7 +44,11 @@ export default function Pesquisa({ lista, setLista, listaPagina, setListaPagina,
                         if (tipo == "planets") {
                             localStorage.setItem("planets", JSON.stringify(lista));
                         } else {
-                            localStorage.setItem("starships", JSON.stringify(lista));
+                            if (tipo == "species") {
+                                localStorage.setItem("species", JSON.stringify(lista));
+                            } else {
+                                localStorage.setItem("starships", JSON.stringify(lista));
+                            }
                         }
                     }
                 }
@@ -105,7 +109,7 @@ export default function Pesquisa({ lista, setLista, listaPagina, setListaPagina,
             <section className={styles.section}>
 
                 {listaPagina.map(personagem =>
-                    <Item key={personagem.name} pers={personagem} personagens={personagens} veiculos={veiculos} planetas={planetas} naves={naves}/>
+                    <Item key={personagem.name} pers={personagem} personagens={personagens} veiculos={veiculos} planetas={planetas} naves={naves} species={species}/>
                     //chama o card de cada objeto dentro da lista de objetos pagina
                 )}
             </section>

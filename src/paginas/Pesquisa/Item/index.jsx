@@ -19,6 +19,7 @@ export default function Item({ pers, veiculos, naves, planetas }) {
                 <span className={styles.span} onClick={() => {
                     document.getElementById(`personagem_${pers.url}`).style.display='none';
                 }}>&times;</span>
+                
                 <div className={styles.desc}>
                     <h1>{pers.name}</h1>
                     <h2>Filmes: {pers.films.map(film =>

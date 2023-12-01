@@ -32,6 +32,12 @@ function Router() {
     { page: [] },
     { page: [] },
   ])
+  const [species, setSpecies] = useState([
+    { page: [] },
+    { page: [] },
+    { page: [] },
+    { page: [] },
+  ])
   const [planetas, setPlanetas] = useState([
     { page: [] },
     { page: [] },
@@ -44,7 +50,8 @@ function Router() {
     ...personagens, 
     ...veiculos, 
     ...naves, 
-    ...planetas
+    ...planetas,
+    ...species
   ])
 
   const [objetosPagina, setObjetosPagina] = useState([]);
@@ -126,6 +133,9 @@ function Router() {
       if (JSON.parse(localStorage.getItem("starships"))[0].page.length != 0) {
         setNaves(JSON.parse(localStorage.getItem("starships")));
       }
+      if (JSON.parse(localStorage.getItem("species"))[0].page.length != 0) {
+        setNaves(JSON.parse(localStorage.getItem("species")));
+      }
     } catch (error) {
       console.log("Os dados ainda não estão guardados no localstorage");
       getFilmes();
@@ -145,11 +155,12 @@ function Router() {
 
             <Routes>
               <Route path="/" element={<Filmes filmes={filmes} />} />
-              <Route path="/pesquisa/personagens" element={<Pesquisa tipo="people" lista={personagens} setLista={setPersonagens} listaPagina={objetosPagina} setListaPagina={setObjetosPagina} personagens={personagens} veiculos={veiculos} planetas={planetas} naves={naves}/>} />
-              <Route path="/pesquisa/veiculos" element={<Pesquisa tipo="vehicles" lista={veiculos} setLista={setVeiculos} listaPagina={objetosPagina} setListaPagina={setObjetosPagina} personagens={personagens} veiculos={veiculos} planetas={planetas} naves={naves}/>} />
-              <Route path="/pesquisa/planetas" element={<Pesquisa tipo="planets" lista={planetas} setLista={setPlanetas} listaPagina={objetosPagina} setListaPagina={setObjetosPagina} personagens={personagens} veiculos={veiculos} planetas={planetas} naves={naves}/>} />
-              <Route path="/pesquisa/naves" element={<Pesquisa tipo="starships" lista={naves} setLista={setNaves} listaPagina={objetosPagina} setListaPagina={setObjetosPagina} personagens={personagens} veiculos={veiculos} planetas={planetas} naves={naves}/>} />
-              <Route path="/pesquisa/geral" element={<Pesquisa tipo="geral" lista={geral} setLista={setGeral} listaPagina={objetosPagina} setListaPagina={setObjetosPagina} personagens={personagens} veiculos={veiculos} planetas={planetas} naves={naves}/>} />
+              <Route path="/pesquisa/personagens" element={<Pesquisa tipo="people" lista={personagens} setLista={setPersonagens} listaPagina={objetosPagina} setListaPagina={setObjetosPagina} personagens={personagens} veiculos={veiculos} planetas={planetas} naves={naves} species={species}/>} />
+              <Route path="/pesquisa/veiculos" element={<Pesquisa tipo="vehicles" lista={veiculos} setLista={setVeiculos} listaPagina={objetosPagina} setListaPagina={setObjetosPagina} personagens={personagens} veiculos={veiculos} planetas={planetas} naves={naves} species={species}/>} />
+              <Route path="/pesquisa/planetas" element={<Pesquisa tipo="planets" lista={planetas} setLista={setPlanetas} listaPagina={objetosPagina} setListaPagina={setObjetosPagina} personagens={personagens} veiculos={veiculos} planetas={planetas} naves={naves} species={species}/>} />
+              <Route path="/pesquisa/naves" element={<Pesquisa tipo="starships" lista={naves} setLista={setNaves} listaPagina={objetosPagina} setListaPagina={setObjetosPagina} personagens={personagens} veiculos={veiculos} planetas={planetas} naves={naves} species={species}/>} />
+              <Route path="/pesquisa/species" element={<Pesquisa tipo="species" lista={species} setLista={setSpecies} listaPagina={objetosPagina} setListaPagina={setObjetosPagina} personagens={personagens} veiculos={veiculos} planetas={planetas} naves={naves} species={species}/>} />
+              <Route path="/pesquisa/geral" element={<Pesquisa tipo="geral" lista={geral} setLista={setGeral} listaPagina={objetosPagina} setListaPagina={setObjetosPagina} personagens={personagens} veiculos={veiculos} planetas={planetas} naves={naves} species={species}/>} />
             </Routes>
           </main>
 
