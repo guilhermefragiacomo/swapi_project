@@ -84,7 +84,7 @@ export default function SearchBar({ personagens, veiculos, planetas, naves, obje
                     let arrayTemp2 = [...personagens, ...veiculos, ...naves, ...planetas];
                     setGeral(arrayTemp2);
 
-                    currentUrl = String(window.location.href).slice(31);
+                    currentUrl = String(window.location.href).slice(45);
                     
                     console.log(window.location.href);
                     console.log(currentUrl);
